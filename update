@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arcadia Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+    }
+    header{
+      background:#020617;
+      padding:20px;
+      text-align:center;
+      font-size:28px;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+    .container{
+      padding:20px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap:20px;
+    }
+    .card{
+      background:#1e293b;
+      border-radius:12px;
+      padding:15px;
+      text-align:center;
+      cursor:pointer;
+      transition:0.2s;
+    }
+    .card:hover{
+      transform:scale(1.05);
+      background:#334155;
+    }
+    iframe{
+      width:100%;
+      height:80vh;
+      border:none;
+      border-radius:12px;
+      margin-top:20px;
+    }
+    .hidden{display:none;}
+    footer{
+      text-align:center;
+      padding:15px;
+      font-size:12px;
+      color:#94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<header>Arcadia Hub</header>
+
+<div class="container" id="games">
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/slope/index.html')">Slope</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/1v1-lol/index.html')">1v1.LOL</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/retro-bowl/index.html')">Retro Bowl</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/drift-boss/index.html')">Drift Boss</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/stack-ball/index.html')">Stack Ball</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/moto-x3m/index.html')">Moto X3M</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/temple-run-2/index.html')">Temple Run 2</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/house-of-hazards/index.html')">House of Hazards</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/stickman-hook/index.html')">Stickman Hook</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/shell-shockers/index.html')">Shell Shockers</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/basketball-stars/index.html')">Basketball Stars</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/rooftop-snipers/index.html')">Rooftop Snipers</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/slope/index.html')">Slope</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/1v1-lol/index.html')">1v1.LOL</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/retro-bowl/index.html')">Retro Bowl</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/drift-boss/index.html')">Drift Boss</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/stack-ball/index.html')">Stack Ball</div>
+  <div class="card" onclick="loadGame('https://games.crazygames.com/en_US/moto-x3m/index.html')">Moto X3M</div>
+</div>
+
+<div class="container hidden" id="player">
+  <div class="card" onclick="goBack()">⬅ Back to Hub</div>
+  <iframe id="gameFrame"></iframe>
+</div>
+
+<footer>Arcadia Hub © 2026</footer>
+
+<script>
+  function loadGame(url){
+    document.getElementById('games').classList.add('hidden');
+    document.getElementById('player').classList.remove('hidden');
+    document.getElementById('gameFrame').src = url;
+  }
+
+  function goBack(){
+    document.getElementById('player').classList.add('hidden');
+    document.getElementById('games').classList.remove('hidden');
+    document.getElementById('gameFrame').src = '';
+  }
+</script>
+
+</body>
+</html>
